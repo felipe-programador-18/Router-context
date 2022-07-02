@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import {useContext } from "react"
 import { CounterCountext } from "../Context/counter"
 
 // this turned hoock personalites to together work about contextapi!!
