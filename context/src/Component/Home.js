@@ -2,10 +2,17 @@
 import "./component.css"
 //import  {CounterCountext}  from '../Context/counter'
 import { useCounterHook } from '../hoock/useCounterCounter'
+import { useTitleCreateColor } from "../hoock/useTitleColor"
 
 const Home = () => {
     //const {counter,phase, setCounter} = useContext(CounterCountext)
-  
+   
+    //adding value about context more hard!!
+    //works inside about titlechangecolor
+   const {color} = useTitleCreateColor()
+   console.log(color)
+
+
     const {counter, phase, setCounter} = useCounterHook()
 
     const IncreaseCounter = () => {
@@ -20,13 +27,13 @@ const Home = () => {
 
 
     return (<>
-    <h1 className='information' >Information about home and my products!!</h1>{counter}
+    <h1 className='information' style={{color: color}} >Information about home and my products!!</h1>{counter}
      <button onClick={IncreaseCounter} >Increase</button>
      <button onClick={Decrement} >Decrement</button>
     
        <h2>  {phase} </h2>
 
-
+        {color}
     </>)
 }
 
