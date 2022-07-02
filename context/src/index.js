@@ -5,16 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CounterManageProvider } from './Context/counter';
-
+import { CreatContexProv } from './Context/TitleColor';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CounterManageProvider>
-    <BrowserRouter>
-     <App />
-     </BrowserRouter>
-     </CounterManageProvider>
+      <CreatContexProv>
+        
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+        
+      </CreatContexProv>
+    </CounterManageProvider>
   </React.StrictMode>
 );
 
