@@ -1,9 +1,11 @@
-import React, {useContext} from 'react'
+//import React, {useContext} from 'react'
 import './component.css'
-import { CounterCountext } from '../Context/counter'
+//import { CounterCountext } from '../Context/counter'
+import { useCounterHook } from '../hoock/useCounterCounter'
+
 
 const Sobre = () => {
-  const {counter,phase, setCounter} = useContext(CounterCountext)
+  const {counter,phase, setCounter} = useCounterHook()
 
   const IncreaseCounter = () => {
     setCounter(counter+1)  
