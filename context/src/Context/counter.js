@@ -8,7 +8,7 @@ export const CounterManageProvider = ({children}) => {
     const [counter, setCounter] = useState(12)
     const [phase,setPhase] = useState("adding new value about state!!")
     return (  
-      <CounterCountext.Provider value={{counter,phase, setCounter}} >
+      <CounterCountext.Provider value={{counter,phase, setCounter, setPhase}} >
        {children}
       </CounterCountext.Provider>
     )
