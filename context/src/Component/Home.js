@@ -9,8 +9,15 @@ const Home = () => {
    
     //adding value about context more hard!!
     //works inside about titlechangecolor
-   const {color} = useTitleCreateColor()
-   console.log(color)
+    const {color, dispatch} = useTitleCreateColor()
+    console.log(color)
+
+    //adding new ways to change complex content!!
+    const styleTitle = (color) => {
+        dispatch({type:color})
+    } 
+     
+
 
 
     const {counter, phase, setCounter} = useCounterHook()
@@ -27,13 +34,21 @@ const Home = () => {
 
 
     return (<>
-    <h1 className='information' style={{color: color}} >Information about home and my products!!</h1>{counter}
-     <button onClick={IncreaseCounter} >Increase</button>
+    <h1 className='information' style={{color: color}} >Information about home and my products!!</h1>
+     
+      <div className="fatherbutton" >
+      {counter}
+      <button onClick={IncreaseCounter} >Increase</button>
      <button onClick={Decrement} >Decrement</button>
     
-       <h2>  {phase} </h2>
-
+      
         {color}
+
+        <button onClick= { () => styleTitle("RED") } >Red</button>
+        <button  onClick= { () => styleTitle("BLUE") }>Blue</button>
+        <button  onClick= { () => styleTitle("GREEN") }>Green</button>
+      </div>
+
     </>)
 }
 
