@@ -5,7 +5,7 @@ import { CounterCountext } from "../Context/counter"
 
 export const useCounterHook = () => {
   const context = useContext(CounterCountext)
-
+  console.log('testetsetes', context)
   if(!context){
     console.log('context not found!!!')
   }   
